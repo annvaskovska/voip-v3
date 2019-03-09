@@ -3,6 +3,7 @@ import Navigation from './sections/nav/Nav';
 import Header from './sections/header/Header';
 import WorkWith from './sections/work-with/WorkWith';
 import WhyUs from './sections/why-us/WhyUs';
+import WeOffer from './sections/we-offer/WeOffer';
 import './App.css';
 
 class App extends Component {
@@ -19,6 +20,7 @@ class App extends Component {
         <Header/>
         <WorkWith/>
         <WhyUs/>
+        <WeOffer/>
       </div>
     );
   }

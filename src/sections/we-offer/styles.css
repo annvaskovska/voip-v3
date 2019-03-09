@@ -1,0 +1,76 @@
+.whe-offer-container {
+
+}
+
+.whe-offer-header {
+    font-size: 1.4em;
+    text-transform: uppercase;
+    padding: 40px;
+}
+
+.trial-cont {
+     color: white;
+     height: 100px;
+     background-color: #ff8b38;
+     border-top-left-radius: 10px;
+     border-top-right-radius: 10px;
+ }
+
+.full-cont {
+    color: white;
+    height: 100px;
+    background-color: #ff8b38;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* ------ Header ------*/
+
+.row-header {
+    height: 30px;
+    /*background-color:rgba(255, 255, 255, 0.5)*/
+    background-color: #f9f9fa;
+}
+
+.cell-full-title {
+    font-size: 1.2em;
+}
+
+.cell-header-trial {
+    background-color: #f9c9a8;
+    font-size: 1.1em;
+    height: 100%;
+    color: white;
+}
+
+.cell-header-full {
+    background-color: #aad9e4;
+    font-size: 1.1em;
+    height: 100%;
+    color: white;
+}
+
+/* ------ Regular ------*/
+
+.row-regular {
+    height: 30px;
+    border-bottom: 1px solid #f9f9fa;
+}
+
+.cell-regular-title {
+
+}
+
+.cell-regular-trial {
+    background-color: #ff8b38;
+    font-size: 1.1em;
+    height: 100%;
+    color: white;
+}
+
+.cell-regular-full {
+    background-color: #41b0c8;
+    font-size: 1.1em;
+    height: 100%;
+    color: white;
+}
