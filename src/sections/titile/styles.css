@@ -1,0 +1,9 @@
+.title-container {
+    background-color: #f5f5f5;
+}
+
+.title-text {
+    font-size: 1.4em;
+    text-transform: uppercase;
+    height: 140px;
+}

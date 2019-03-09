@@ -10,11 +10,6 @@ class WeOffer extends React.Component {
         return (
             <Container className='whe-offer-container'>
                 <Row>
-                    <Col md={{ span: 12 }} className='whe-offer-header m-auto d-flex justify-content-center align-items-center'>
-                        Пакеты услуг
-                    </Col>
-                </Row>
-                <Row>
                     <Col md={{ span: 3, offset: 6 }}>
                         <div className='trial-cont'>
                             <div className='trial-header'>Пробный</div>
@@ -24,8 +19,8 @@ class WeOffer extends React.Component {
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='full-cont'>
-                            <div className='full-header'>Пробный</div>
-                            <div className='full-price'>$0</div>
+                            <div className='full-header'>Business</div>
+                            <div className='full-price'><span style={{ fontSize: '0.4em' }}>от</span>$20</div>
                             <div className='full-duration'>в месяц</div>
                         </div>
                     </Col>
