@@ -2,6 +2,27 @@
     width: 100%;
 }
 
-.logo {
+.voip-nav {
+    background-color: black;
+}
 
+.voip {
+    color: white;
+}
+
+.plus {
+   color: #ff8b38;
+}
+
+.voip-nav-link {
+    color: white!important;
+}
+
+.voip-nav-link:hover {
+    color: #ff8b38!important;
+}
+
+.navbar-light .navbar-toggler {
+    color: #ff8b38!important;
+    border-color: #ff8b38!important;
 }
