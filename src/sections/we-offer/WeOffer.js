@@ -18,6 +18,10 @@ class WeOffer extends React.Component {
             autoPollOn: false,
             total: 0,
         };
+
+        this.internalLinesCoeff = 10;
+        this.autoInformatorPrice = 200;
+        this.autoPollPrice = 250;
         this.onInternalLinesChange = this.onInternalLinesChange.bind(this);
         this.onExternalLinesChange = this.onExternalLinesChange.bind(this);
         this.onVoiceMenuLevelsChange = this.onVoiceMenuLevelsChange.bind(this);
@@ -28,7 +32,7 @@ class WeOffer extends React.Component {
 
     onInternalLinesChange(event) {
         const prev = this.state.internalLines;
-        const total = this.state.total - 10 * prev + 10 * event.target.value;
+        const total = this.state.total - this.internalLinesCoeff * prev + this.internalLinesCoeff * event.target.value;
         this.setState({
             internalLines: event.target.value,
             total,
@@ -48,7 +52,7 @@ class WeOffer extends React.Component {
     }
 
     onAutodialerToggle() {
-        const total = !this.state.autodialerOn ? this.state.total + this.state.internalLines * 10 : this.state.total - this.state.internalLines * 10;
+        const total = !this.state.autodialerOn ? this.state.total + this.state.internalLines * this.internalLinesCoeff : this.state.total - this.state.internalLines * this.internalLinesCoeff;
         this.setState({
             autodialerOn: !this.state.autodialerOn,
             total,
@@ -57,7 +61,7 @@ class WeOffer extends React.Component {
     }
 
     onAutoInformatorToggle() {
-        const total = !this.state.autoInformatorOn ? this.state.total + 200 : this.state.total - 200;
+        const total = !this.state.autoInformatorOn ? this.state.total + this.autoInformatorPrice : this.state.total - this.autoInformatorPrice;
         this.setState({
             autoInformatorOn: !this.state.autoInformatorOn,
             total,
@@ -65,7 +69,7 @@ class WeOffer extends React.Component {
     }
 
     onAutoPollToggle() {
-        const total = !this.state.autoPollOn ? this.state.total + 250 : this.state.total - 250;
+        const total = !this.state.autoPollOn ? this.state.total + this.autoPollPrice : this.state.total - this.autoPollPrice;
         this.setState({
             autoPollOn: !this.state.autoPollOn,
             total,
@@ -217,7 +221,7 @@ class WeOffer extends React.Component {
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-header-full with-toggle'>
-                            {`$ ${10 * this.state.internalLines}`}
+                            {`$ ${this.internalLinesCoeff * this.state.internalLines}`}
                             <div
                                 className='toggle-container'
                                 onChange={this.onAutodialerToggle}
@@ -246,7 +250,7 @@ class WeOffer extends React.Component {
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-header-full with-toggle'>
-                            $ 200
+                            { `$${this.autoInformatorPrice}`}
                             <div
                                 className='toggle-container'
                                 onChange={this.onAutoInformatorToggle}
@@ -275,7 +279,7 @@ class WeOffer extends React.Component {
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-header-full with-toggle'>
-                            $ 250
+                            { `$${this.autoPollPrice}`}
                             <div
                                 className='toggle-container'
                                 onChange={this.onAutoPollToggle}
