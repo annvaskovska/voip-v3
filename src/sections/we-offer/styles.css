@@ -10,16 +10,45 @@
 
 .trial-cont {
      color: white;
-     height: 100px;
+     height: 140px;
+     padding-top: 10px;
+     display: flex;
+     flex-direction: column;
      background-color: #ff8b38;
      border-top-left-radius: 10px;
      border-top-right-radius: 10px;
  }
 
+.trial-header, .full-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.trial-price, .full-price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 4em;
+    line-height: 1em;
+}
+
+.trial-duration, .full-duration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
 .full-cont {
     color: white;
-    height: 100px;
-    background-color: #ff8b38;
+    height: 140px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #41b0c8;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -27,9 +56,9 @@
 /* ------ Header ------*/
 
 .row-header {
-    height: 30px;
-    /*background-color:rgba(255, 255, 255, 0.5)*/
+    min-height: 32px;
     background-color: #f9f9fa;
+    border-bottom: 1px solid transparent;
 }
 
 .cell-full-title {
@@ -53,7 +82,7 @@
 /* ------ Regular ------*/
 
 .row-regular {
-    height: 30px;
+    min-height: 32px;
     border-bottom: 1px solid #f9f9fa;
 }
 
@@ -73,4 +102,51 @@
     font-size: 1.1em;
     height: 100%;
     color: white;
+}
+
+/* ------ Total ------*/
+
+.row-total {
+    height: 4em;
+}
+
+.cell-total-title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: bold;
+    font-size: 2em;
+    height: 100%;
+}
+
+.cell-total-trial {
+    background-color: #ff8b38;
+    font-size: 1.1em;
+    height: 100%;
+    color: white;
+    padding: 10px;
+}
+
+.cell-total-full {
+    background-color: #41b0c8;
+    font-size: 1.1em;
+    height: 100%;
+    color: white;
+    padding: 10px;
+}
+
+.total-price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 3em;
+    line-height: 1em;
+}
+
+.total-duration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
 }
