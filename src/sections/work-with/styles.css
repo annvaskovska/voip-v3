@@ -3,12 +3,14 @@
     width: 30px;
     background: url('./../../resources/icons/next.svg') no-repeat center center;
     transform: rotate(180deg);
+    cursor: pointer;
 }
 
 .next {
     height: 30px;
     width: 30px;
     background: url('./../../resources/icons/next.svg') no-repeat center center;
+    cursor: pointer;
 }
 
 .company {

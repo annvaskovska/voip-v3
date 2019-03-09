@@ -11,59 +11,64 @@ class WorkWith extends React.Component {
         this.prev = this.prev.bind(this);
         this.next = this.next.bind(this);
 
+        const clients = [
+            {
+                id: 1,
+                name: 'Chicco',
+                className: 'chicco'
+            },
+            {
+                id: 2,
+                name: 'disla',
+                className: 'disla',
+            },
+            {
+                id: 3,
+                name: 'eldorado',
+                className: 'eldorado',
+
+            },
+            {
+                id: 4,
+                name: 'disla',
+                className: 'disla',
+            },
+            {
+                id: 5,
+                name: 'eldorado',
+                className: 'eldorado',
+
+            },
+        ];
+
         this.state = {
-            clients: [
-                {
-                    id: 1,
-                    name: 'Chicco',
-                    className: 'chicco'
-                },
-                {
-                    id: 2,
-                    name: 'disla',
-                    className: 'disla',
-                },
-                {
-                    id: 3,
-                    name: 'eldorado',
-                    className: 'eldorado',
-
-                },
-                {
-                    id: 4,
-                    name: 'disla',
-                    className: 'disla',
-                },
-                {
-                    id: 5,
-                    name: 'eldorado',
-                    className: 'eldorado',
-
-                },
-            ],
+            clients,
+            visibleClients: clients.slice(0, 3),
             startFrom: 0,
         };
+
     }
 
     prev() {
         const { startFrom, clients } = this.state;
-        const next = startFrom === clients.length ? 0 : startFrom + 1;
+        const visibleClients = clients.slice(startFrom + 1);
         this.setState({
-            startFrom: next,
+            startFrom: startFrom - 1,
+            visibleClients,
         });
     }
 
     next() {
         const { startFrom, clients } = this.state;
-        const next = startFrom === clients.length ? 0 : startFrom + 1;
+        const visibleClients = clients.slice(startFrom + 1);
         this.setState({
-            startFrom: next,
+            startFrom: startFrom + 1,
+            visibleClients,
         });
     }
 
     render() {
-        const { clients, startFrom } = this.state;
-        const visibleClients = clients.slice(startFrom, 3);
+        const { visibleClients } = this.state;
 
         return (
             <Container>
