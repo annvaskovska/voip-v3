@@ -1,0 +1,33 @@
+.prev {
+    height: 30px;
+    width: 30px;
+    background: url('./../../resources/icons/next.svg') no-repeat center center;
+    transform: rotate(180deg);
+}
+
+.next {
+    height: 30px;
+    width: 30px;
+    background: url('./../../resources/icons/next.svg') no-repeat center center;
+}
+
+.company {
+    height: 70px;
+    width: auto;
+    margin: 20px;
+}
+
+.chicco {
+    background: url('./../../resources/work-with/chicco_logo.png') no-repeat;
+    background-size: contain;
+}
+
+.eldorado {
+    background: url('./../../resources/work-with/eldor.png') no-repeat;
+    background-size: contain;
+}
+
+.disla {
+    background: url('./../../resources/work-with/usaid.png') no-repeat;
+    background-size: contain;
+}

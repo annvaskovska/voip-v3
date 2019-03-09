@@ -1,0 +1,22 @@
+.header {
+    background: url('./../../resources/img/header-bg1.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.title {
+    height: 300px;
+    color: white;
+    font-size: 2em;
+}
+
+.divider {
+    color: white;
+    height: 20px;
+}
+
+.description {
+    padding-top: 20px;
+    height: 300px;
+    color: white;
+    font-size: .8em;
+}
