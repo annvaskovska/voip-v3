@@ -71,7 +71,7 @@ class WorkWith extends React.Component {
         const { visibleClients } = this.state;
 
         return (
-            <Container>
+            <Container fluid='true' className='work-with-container'>
                <Row className='justify-content-md-center'>
                    <Col md={{ span: 1 }} className='align-self-center'>
                        <div
