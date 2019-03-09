@@ -3,10 +3,67 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './styles.css';
+import './inputs.css';
 
 class WeOffer extends React.Component {
-    render() {
+    constructor(props) {
+        super(props);
+        this.state = {
+            internalLines: 7,
+            externalLines: 10,
+            voiceMenuLevels: 8,
+            autodialerOn: false,
+            autoInformatorOn: false,
+            autoPollOn: false,
+        };
+        this.onInternalLinesChange = this.onInternalLinesChange.bind(this);
+        this.onExternalLinesChange = this.onExternalLinesChange.bind(this);
+        this.onVoiceMenuLevelsChange = this.onVoiceMenuLevelsChange.bind(this);
+        this.onAutodialerToggle = this.onAutodialerToggle.bind(this);
+        this.onAutoInformatorToggle = this.onAutoInformatorToggle.bind(this);
+        this.onAutoPollToggle = this.onAutoPollToggle.bind(this);
+    }
 
+    onInternalLinesChange(event) {
+        this.setState({
+            internalLines: event.target.value,
+        });
+    }
+
+    onExternalLinesChange(event) {
+        this.setState({
+            externalLines: event.target.value,
+        });
+    }
+
+    onVoiceMenuLevelsChange(event) {
+        this.setState({
+            voiceMenuLevels: event.target.value,
+        });
+    }
+
+    onAutodialerToggle() {
+        const oldAutodialer = this.state.autodialerOn;
+        this.setState({
+            autodialerOn: !oldAutodialer,
+        });
+    }
+
+    onAutoInformatorToggle() {
+        const oldAutoInformatorOn = this.state.autodialerOn;
+        this.setState({
+            autoInformatorOn: !oldAutoInformatorOn,
+        });
+    }
+
+    onAutoPollToggle() {
+        const oldAutoPollOn = this.state.autodialerOn;
+        this.setState({
+            autoPollOn: !oldAutoPollOn,
+        });
+    }
+
+    render() {
         return (
             <Container className='whe-offer-container'>
                 <Row>
@@ -53,7 +110,12 @@ class WeOffer extends React.Component {
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-regular-full m-auto d-flex justify-content-center align-items-center'>
-                            6
+                            <input
+                                type='number'
+                                className='input-internal-lines'
+                                value={this.state.internalLines}
+                                onChange={this.onInternalLinesChange}
+                            />
                         </div>
                     </Col>
                 </Row>
@@ -65,12 +127,17 @@ class WeOffer extends React.Component {
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-regular-trial m-auto d-flex justify-content-center align-items-center'>
-                            9
+                            3
                         </div>
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-regular-full m-auto d-flex justify-content-center align-items-center'>
-                            4
+                            <input
+                                type='number'
+                                className='input-internal-lines'
+                                value={this.state.externalLines}
+                                onChange={this.onExternalLinesChange}
+                            />
                         </div>
                     </Col>
                 </Row>
@@ -82,12 +149,17 @@ class WeOffer extends React.Component {
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-regular-trial m-auto d-flex justify-content-center align-items-center'>
-                            9
+                            1 уровень
                         </div>
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-regular-full m-auto d-flex justify-content-center align-items-center'>
-                            4
+                            <input
+                                type='number'
+                                className='input-internal-lines'
+                                value={this.state.voiceMenuLevels}
+                                onChange={this.onVoiceMenuLevelsChange}
+                            />
                         </div>
                     </Col>
                 </Row>
@@ -99,12 +171,12 @@ class WeOffer extends React.Component {
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-regular-trial m-auto d-flex justify-content-center align-items-center'>
-                            2
+                            40 дней
                         </div>
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-regular-full m-auto d-flex justify-content-center align-items-center'>
-                            7
+                            { `${2 * this.state.internalLines} дней` }
                         </div>
                     </Col>
                 </Row>
@@ -116,29 +188,12 @@ class WeOffer extends React.Component {
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-regular-trial m-auto d-flex justify-content-center align-items-center'>
-                            45
+                            1
                         </div>
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-regular-full m-auto d-flex justify-content-center align-items-center'>
-                            4
-                        </div>
-                    </Col>
-                </Row>
-                <Row className='row-regular'>
-                    <Col md={{ span: 6 }}>
-                        <div className='cell-regular-title'>
-                            Телефония
-                        </div>
-                    </Col>
-                    <Col md={{ span: 3 }}>
-                        <div className='cell-regular-trial m-auto d-flex justify-content-center align-items-center'>
-                            9
-                        </div>
-                    </Col>
-                    <Col md={{ span: 3 }}>
-                        <div className='cell-regular-full m-auto d-flex justify-content-center align-items-center'>
-                            4
+                            неорганиченно
                         </div>
                     </Col>
                 </Row>
@@ -153,7 +208,21 @@ class WeOffer extends React.Component {
                         </div>
                     </Col>
                     <Col md={{ span: 3 }}>
-                        <div className='cell-header-full'>
+                        <div className='cell-header-full with-toggle'>
+                            {`$ ${10 * this.state.internalLines}`}
+                            <div className='toggle-container'>
+                                <input
+                                    id='autodialer'
+                                    type='checkbox'
+                                    value={this.state.autodialerOn}
+                                    onChange={this.onAutodialerToggle}
+                                    className='tgl tgl-flat'
+                                />
+                                <label
+                                    className='tgl-btn'
+                                    htmlFor="autodialer"
+                                />
+                            </div>
                         </div>
                     </Col>
                 </Row>
@@ -168,7 +237,21 @@ class WeOffer extends React.Component {
                         </div>
                     </Col>
                     <Col md={{ span: 3 }}>
-                        <div className='cell-header-full'>
+                        <div className='cell-header-full with-toggle'>
+                            $ 200
+                            <div className='toggle-container'>
+                                <input
+                                    id='autoInformator'
+                                    type='checkbox'
+                                    value={this.state.autoInformatorOn}
+                                    onChange={this.onAutoInformatorToggle}
+                                    className='tgl tgl-flat'
+                                />
+                                <label
+                                    className='tgl-btn'
+                                    htmlFor="autoInformator"
+                                />
+                            </div>
                         </div>
                     </Col>
                 </Row>
@@ -183,7 +266,21 @@ class WeOffer extends React.Component {
                         </div>
                     </Col>
                     <Col md={{ span: 3 }}>
-                        <div className='cell-header-full'>
+                        <div className='cell-header-full with-toggle'>
+                            $ 250
+                            <div className='toggle-container'>
+                                <input
+                                    id='autoPollOn'
+                                    type='checkbox'
+                                    value={this.state.autoPollOn}
+                                    onChange={this.onAutoPollToggle}
+                                    className='tgl tgl-flat'
+                                />
+                                <label
+                                    className='tgl-btn'
+                                    htmlFor="autoPollOn"
+                                />
+                            </div>
                         </div>
                     </Col>
                 </Row>
