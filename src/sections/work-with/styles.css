@@ -35,6 +35,11 @@
 }
 
 .disla {
+    background: url('./../../resources/work-with/disla-logo.png') no-repeat;
+    background-size: contain;
+}
+
+.usaid {
     background: url('./../../resources/work-with/usaid.png') no-repeat;
     background-size: contain;
 }

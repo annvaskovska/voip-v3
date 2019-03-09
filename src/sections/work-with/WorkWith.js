@@ -8,8 +8,8 @@ class WorkWith extends React.Component {
     constructor(props, context) {
         super(props, context);
 
-        this.prev = this.prev.bind(this);
-        this.next = this.next.bind(this);
+        // this.prev = this.prev.bind(this);
+        // this.next = this.next.bind(this);
 
         const clients = [
             {
@@ -30,14 +30,8 @@ class WorkWith extends React.Component {
             },
             {
                 id: 4,
-                name: 'disla',
-                className: 'disla',
-            },
-            {
-                id: 5,
-                name: 'eldorado',
-                className: 'eldorado',
-
+                name: 'usaid',
+                className: 'usaid',
             },
         ];
 
@@ -49,38 +43,32 @@ class WorkWith extends React.Component {
 
     }
 
-    prev() {
-        const { startFrom, clients } = this.state;
-        const visibleClients = clients.slice(startFrom + 1);
-        this.setState({
-            startFrom: startFrom - 1,
-            visibleClients,
-        });
-    }
-
-    next() {
-        const { startFrom, clients } = this.state;
-        const visibleClients = clients.slice(startFrom + 1);
-        this.setState({
-            startFrom: startFrom + 1,
-            visibleClients,
-        });
-    }
+    // prev() {
+    //     const { startFrom, clients } = this.state;
+    //     const visibleClients = clients.slice(startFrom + 1);
+    //     this.setState({
+    //         startFrom: startFrom - 1,
+    //         visibleClients,
+    //     });
+    // }
+    //
+    // next() {
+    //     const { startFrom, clients } = this.state;
+    //     const visibleClients = clients.slice(startFrom + 1);
+    //     this.setState({
+    //         startFrom: startFrom + 1,
+    //         visibleClients,
+    //     });
+    // }
 
     render() {
-        const { visibleClients } = this.state;
+        const { clients } = this.state;
 
         return (
             <Container fluid='true' className='work-with-container'>
                <Row className='justify-content-md-center'>
-                   <Col md={{ span: 1 }} className='align-self-center'>
-                       <div
-                           className='prev'
-                           onClick={this.prev}
-                       />
-                   </Col>
                    {
-                       visibleClients.map((client) => {
+                       clients.map((client) => {
                            const className=`company ${client.className}`;
                            return (
                                <Col
@@ -92,12 +80,6 @@ class WorkWith extends React.Component {
                            )
                        })
                    }
-                   <Col md={{ span: 1 }} className='align-self-center'>
-                       <div
-                           className='next'
-                           onClick={this.next}
-                       />
-                   </Col>
                </Row>
             </Container>
         );
