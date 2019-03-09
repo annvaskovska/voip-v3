@@ -19,6 +19,13 @@
     margin-left: 0.5em;
 }
 
+.icon-tick {
+    height: 20px;
+    width: 20px;
+    background: url('./../../resources/icons/tick.svg') no-repeat center center;
+    background-size: contain;
+}
+
 .tg-list-item {
     margin: 0 2em;
 }

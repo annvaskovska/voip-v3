@@ -2,6 +2,7 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Tick from './Tick';
 import './styles.css';
 import './inputs.css';
 
@@ -15,6 +16,7 @@ class WeOffer extends React.Component {
             autodialerOn: false,
             autoInformatorOn: false,
             autoPollOn: false,
+            total: 0,
         };
         this.onInternalLinesChange = this.onInternalLinesChange.bind(this);
         this.onExternalLinesChange = this.onExternalLinesChange.bind(this);
@@ -25,8 +27,11 @@ class WeOffer extends React.Component {
     }
 
     onInternalLinesChange(event) {
+        const prev = this.state.internalLines;
+        const total = this.state.total - 10 * prev + 10 * event.target.value;
         this.setState({
             internalLines: event.target.value,
+            total,
         });
     }
 
@@ -43,23 +48,27 @@ class WeOffer extends React.Component {
     }
 
     onAutodialerToggle() {
-        const oldAutodialer = this.state.autodialerOn;
+        const total = !this.state.autodialerOn ? this.state.total + this.state.internalLines * 10 : this.state.total - this.state.internalLines * 10;
         this.setState({
-            autodialerOn: !oldAutodialer,
+            autodialerOn: !this.state.autodialerOn,
+            total,
         });
+
     }
 
     onAutoInformatorToggle() {
-        const oldAutoInformatorOn = this.state.autodialerOn;
+        const total = !this.state.autoInformatorOn ? this.state.total + 200 : this.state.total - 200;
         this.setState({
-            autoInformatorOn: !oldAutoInformatorOn,
+            autoInformatorOn: !this.state.autoInformatorOn,
+            total,
         });
     }
 
     onAutoPollToggle() {
-        const oldAutoPollOn = this.state.autodialerOn;
+        const total = !this.state.autoPollOn ? this.state.total + 250 : this.state.total - 250;
         this.setState({
-            autoPollOn: !oldAutoPollOn,
+            autoPollOn: !this.state.autoPollOn,
+            total,
         });
     }
 
@@ -204,18 +213,18 @@ class WeOffer extends React.Component {
                         </div>
                     </Col>
                     <Col md={{ span: 3 }}>
-                        <div className='cell-header-trial'>
-                        </div>
+                        <div className='cell-header-trial'>-</div>
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-header-full with-toggle'>
                             {`$ ${10 * this.state.internalLines}`}
-                            <div className='toggle-container'>
+                            <div
+                                className='toggle-container'
+                                onChange={this.onAutodialerToggle}
+                            >
                                 <input
                                     id='autodialer'
                                     type='checkbox'
-                                    value={this.state.autodialerOn}
-                                    onChange={this.onAutodialerToggle}
                                     className='tgl tgl-flat'
                                 />
                                 <label
@@ -233,18 +242,18 @@ class WeOffer extends React.Component {
                         </div>
                     </Col>
                     <Col md={{ span: 3 }}>
-                        <div className='cell-header-trial'>
-                        </div>
+                        <div className='cell-header-trial'>-</div>
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-header-full with-toggle'>
                             $ 200
-                            <div className='toggle-container'>
+                            <div
+                                className='toggle-container'
+                                onChange={this.onAutoInformatorToggle}
+                            >
                                 <input
                                     id='autoInformator'
                                     type='checkbox'
-                                    value={this.state.autoInformatorOn}
-                                    onChange={this.onAutoInformatorToggle}
                                     className='tgl tgl-flat'
                                 />
                                 <label
@@ -262,18 +271,18 @@ class WeOffer extends React.Component {
                         </div>
                     </Col>
                     <Col md={{ span: 3 }}>
-                        <div className='cell-header-trial'>
-                        </div>
+                        <div className='cell-header-trial'>-</div>
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-header-full with-toggle'>
                             $ 250
-                            <div className='toggle-container'>
+                            <div
+                                className='toggle-container'
+                                onChange={this.onAutoPollToggle}
+                            >
                                 <input
                                     id='autoPollOn'
                                     type='checkbox'
-                                    value={this.state.autoPollOn}
-                                    onChange={this.onAutoPollToggle}
                                     className='tgl tgl-flat'
                                 />
                                 <label
@@ -292,10 +301,12 @@ class WeOffer extends React.Component {
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-header-trial'>
+                            <Tick/>
                         </div>
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-header-full'>
+                            $ 14
                         </div>
                     </Col>
                 </Row>
@@ -307,10 +318,12 @@ class WeOffer extends React.Component {
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-header-trial'>
+                            <Tick/>
                         </div>
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-header-full'>
+                            <Tick/>
                         </div>
                     </Col>
                 </Row>
@@ -322,12 +335,12 @@ class WeOffer extends React.Component {
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-regular-trial m-auto d-flex justify-content-center align-items-center'>
-                            9
+                            <Tick/>
                         </div>
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-regular-full m-auto d-flex justify-content-center align-items-center'>
-                            4
+                            <Tick/>
                         </div>
                     </Col>
                 </Row>
@@ -340,12 +353,12 @@ class WeOffer extends React.Component {
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-regular-trial m-auto d-flex justify-content-center align-items-center'>
-                            9
+                            $20/час
                         </div>
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-regular-full m-auto d-flex justify-content-center align-items-center'>
-                            4
+                            $12/час
                         </div>
                     </Col>
                 </Row>
@@ -357,12 +370,12 @@ class WeOffer extends React.Component {
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-regular-trial m-auto d-flex justify-content-center align-items-center'>
-                            9
+                            с 9 до 19 в рабочие дни
                         </div>
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-regular-full m-auto d-flex justify-content-center align-items-center'>
-                            4
+                            круглосуточно
                         </div>
                     </Col>
                 </Row>
@@ -374,12 +387,12 @@ class WeOffer extends React.Component {
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-regular-trial m-auto d-flex justify-content-center align-items-center'>
-                            9
+                            24 часа
                         </div>
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-regular-full m-auto d-flex justify-content-center align-items-center'>
-                            4
+                            6 часов
                         </div>
                     </Col>
                 </Row>
@@ -391,12 +404,12 @@ class WeOffer extends React.Component {
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-regular-trial m-auto d-flex justify-content-center align-items-center'>
-                            9
+                            3 часа
                         </div>
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-regular-full m-auto d-flex justify-content-center align-items-center'>
-                            4
+                            1 час
                         </div>
                     </Col>
                 </Row>
@@ -408,12 +421,12 @@ class WeOffer extends React.Component {
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-regular-trial m-auto d-flex justify-content-center align-items-center'>
-                            9
+                            6 часов
                         </div>
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-regular-full m-auto d-flex justify-content-center align-items-center'>
-                            4
+                            1 час
                         </div>
                     </Col>
                 </Row>
@@ -425,12 +438,12 @@ class WeOffer extends React.Component {
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-regular-trial m-auto d-flex justify-content-center align-items-center'>
-                            9
+                            -
                         </div>
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-regular-full m-auto d-flex justify-content-center align-items-center'>
-                            4
+                            по договоренности
                         </div>
                     </Col>
                 </Row>
@@ -442,12 +455,12 @@ class WeOffer extends React.Component {
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-regular-trial m-auto d-flex justify-content-center align-items-center'>
-                            9
+                            -
                         </div>
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-regular-full m-auto d-flex justify-content-center align-items-center'>
-                            4
+                            <Tick/>
                         </div>
                     </Col>
                 </Row>
@@ -460,12 +473,12 @@ class WeOffer extends React.Component {
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-regular-trial m-auto d-flex justify-content-center align-items-center'>
-                            9
+                            -
                         </div>
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-regular-full m-auto d-flex justify-content-center align-items-center'>
-                            4
+                            <Tick/>
                         </div>
                     </Col>
                 </Row>
@@ -483,7 +496,9 @@ class WeOffer extends React.Component {
                     </Col>
                     <Col md={{ span: 3 }}>
                         <div className='cell-total-full m-auto d-flex flex-column'>
-                            <div className='total-price'>$300</div>
+                            <div className='total-price'>
+                                {`$ ${this.state.total}`}
+                            </div>
                             <div className='total-duration'>в  месяц</div>
                         </div>
                     </Col>
