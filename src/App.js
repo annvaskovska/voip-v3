@@ -6,6 +6,7 @@ import WhyUs from './sections/why-us/WhyUs';
 import WeOffer from './sections/we-offer/WeOffer';
 import Title from './sections/titile/Title';
 import Total from './sections/total/Total';
+import Opportunities from './sections/opportunities/Opportunities';
 import './App.css';
 
 class App extends Component {
@@ -25,6 +26,7 @@ class App extends Component {
         <Title/>
         <WeOffer/>
         <Total/>
+        <Opportunities/>
       </div>
     );
   }

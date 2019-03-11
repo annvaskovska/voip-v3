@@ -1,0 +1,26 @@
+.opportunities-container {
+    padding: 100px 0;
+}
+
+.opportunities-title {
+    font-weight: bold;
+    text-transform: none;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.opportunities-divider {
+    color: #ff8b38;
+    padding-bottom: 30px;
+}
+
+.opportunities-text {
+    font-size: 0.8em;
+    color: #a1a2a5;
+    padding: 20px 0;
+}
+
+.opportunities-img {
+    overflow: hidden;
+    max-height: 400px;
+}
