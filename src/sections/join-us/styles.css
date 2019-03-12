@@ -1,0 +1,44 @@
+.join-us-container {
+    background: url('./../../resources/img/city.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.join-us-title {
+    height: 160px;
+    color: white;
+    font-size: 2em;
+}
+
+.join-us-divider {
+    color: white;
+    height: 50px;
+}
+
+.try-btn-container {
+    height: 160px;
+}
+
+.join-us-try-btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    color: white;
+    border-color: white;
+    cursor: pointer;
+}
+
+.join-us-try-btn:hover {
+    background-color: white;
+    color: #ff8b38;
+}
