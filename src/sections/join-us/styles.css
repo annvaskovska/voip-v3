@@ -4,6 +4,7 @@
 }
 
 .join-us-title {
+    text-transform: uppercase;
     height: 160px;
     color: white;
     font-size: 2em;
