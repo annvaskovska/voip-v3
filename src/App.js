@@ -9,6 +9,7 @@ import Total from './sections/total/Total';
 import Opportunities from './sections/opportunities/Opportunities';
 import KeyPoints from './sections/key-points/KeyPoints';
 import Feedbacks from './sections/feedbacks/Feedbacks';
+import Services from './sections/services/Services';
 import './App.css';
 
 class App extends Component {
@@ -31,6 +32,7 @@ class App extends Component {
         <Opportunities/>
         <KeyPoints/>
         <Feedbacks/>
+        <Services/>
       </div>
     );
   }
