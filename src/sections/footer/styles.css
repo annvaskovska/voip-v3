@@ -1,0 +1,24 @@
+.footer-container {
+    background-color: black;
+    font-size: 0.8em;
+    height: 100%;
+    padding: 30px;
+}
+
+.inner-wrapper {
+    padding: 0 150px;
+}
+
+.footer-col {
+    color: white;
+    cursor: pointer;
+}
+
+.footer-col:hover {
+    color: #ff8b38;
+}
+
+.footer-copy {
+    color: white;
+    height: 80px;
+}

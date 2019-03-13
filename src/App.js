@@ -11,6 +11,7 @@ import KeyPoints from './sections/key-points/KeyPoints';
 import Feedbacks from './sections/feedbacks/Feedbacks';
 import Services from './sections/services/Services';
 import ContactUs from './sections/contact-us/ContactUs';
+import Footer from './sections/footer/Footer';
 import JoinUs from './sections/join-us/JoinUs';
 
 import './App.css';
@@ -38,6 +39,7 @@ class App extends Component {
         <Services/>
         <JoinUs/>
         <ContactUs/>
+        <Footer/>
       </div>
     );
   }
