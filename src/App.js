@@ -10,6 +10,7 @@ import Opportunities from './sections/opportunities/Opportunities';
 import KeyPoints from './sections/key-points/KeyPoints';
 import Feedbacks from './sections/feedbacks/Feedbacks';
 import Services from './sections/services/Services';
+import ContactUs from './sections/contact-us/ContactUs';
 import JoinUs from './sections/join-us/JoinUs';
 
 import './App.css';
@@ -36,6 +37,7 @@ class App extends Component {
         <Feedbacks/>
         <Services/>
         <JoinUs/>
+        <ContactUs/>
       </div>
     );
   }
