@@ -20,6 +20,7 @@
 
 .voip-nav-link {
     color: white!important;
+    padding: .5rem .5rem .1rem .5rem;
 }
 
 .voip-nav-link:hover {

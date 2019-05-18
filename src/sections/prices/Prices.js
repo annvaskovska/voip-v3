@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 import './slyles.css';
 
 const renderRow = ({ name, price }) => (
-    <Row className='results-row'>
+    <Row className='results-row' key={price}>
         <Col md={{ span: 6 }}>
             <div className='cell-regular-title'>
                 {name}
