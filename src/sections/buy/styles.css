@@ -4,6 +4,89 @@
     font-size: 2em;
 }
 
-.buy-step-1-step {
+.buy-step-2 {
+    padding: 30px 0;
+}
 
+.buy-step-2 .form{
+    color: #97979b;
+    padding: 30px 0;
+    font-size: 0.8em;
+}
+
+.buy-step-2 .buy-step-2-header {
+    color: black;
+    height: 80px;
+    font-size: 1.2em;
+}
+
+.buy-step-2 .empty-height-60 {
+    height: 80px;
+}
+
+.buy-step-2 .your-selection {
+
+}
+
+.buy-step-2 .buy-step-2-field {
+    outline: none;
+    border: none;
+    height: 40px;
+    background: #f9f9fa;
+    border-bottom: 1px solid white;
+    font-style: italic;
+    padding-left: 20px;
+}
+
+.your-selection-label {
+    color: black;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.your-selection-plan {
+    display: flex;
+    justify-content: space-between;
+    font-size: 2em;
+    color: black;
+    font-weight: bold;
+}
+
+.your-selection-plan-name {
+
+}
+
+.your-selection-plan-cost {
+
+}
+
+.your-selection-info {
+
+}
+
+.buy-step-2 .btn-outline-contact-us {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #ff8b38;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    color: white;
+    border-color: white;
+    cursor: pointer;
+
+}
+
+.buy-step-2 .btn-outline-contact-us:hover {
+    border-color: #ff8b38;
+    background-color: white;
+    color: #ff8b38;
 }

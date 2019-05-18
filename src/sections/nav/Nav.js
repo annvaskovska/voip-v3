@@ -11,8 +11,10 @@ class Navigation extends React.Component {
         return [
             <Navbar expand="lg" className='voip-nav'>
                 <Navbar.Brand href="#home">
-                    <span className='voip'>VOIP</span>
-                    <span className='plus'>PLUS</span>
+                    <Link className='voip-nav-link' to='/'>
+                        <span className='voip'>VOIP</span>
+                        <span className='plus'>PLUS</span>
+                    </Link>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">

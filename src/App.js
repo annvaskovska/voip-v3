@@ -7,7 +7,7 @@ import HomePage from './sections/home/home';
 import Products from './sections/propducts/Products';
 import Prices from './sections/prices/Prices';
 import ContactUs from './sections/contact-us/ContactUs';
-import BuyStep1 from './sections/buy/BuyStep1';
+import BuyStep2 from './sections/buy/BuyStep2';
 import './App.css';
 
 class App extends Component {
@@ -15,6 +15,7 @@ class App extends Component {
     return (
       <div className="App">
           <Router>
+            <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
             <link
                 rel="stylesheet"
                 href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
@@ -27,7 +28,7 @@ class App extends Component {
                 <Route path="/products" component={Products} />
                 <Route path="/prices" component={Prices} />
                 <Route path="/contact" component={ContactUs} />
-                <Route path="/buy" component={BuyStep1} />
+                <Route path="/buy" component={BuyStep2} />
                 <Route component={HomePage} />
             </Switch>
           </Router>
