@@ -19,19 +19,19 @@ class Navigation extends React.Component {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="d-flex justify-content-end">
-                        <Nav.Link>
+                        <Nav.Link key='/'>
                             <Link className='voip-nav-link' to='/'>О нас</Link>
                         </Nav.Link>
                         {/*<Nav.Link>*/}
                             {/*<Link className='voip-nav-link' to='products'>Продукты</Link>*/}
                         {/*</Nav.Link>*/}
-                        <Nav.Link>
+                        <Nav.Link key='prices'>
                             <Link className='voip-nav-link' to='prices'>Стоимость звонков</Link>
                         </Nav.Link>
-                        <Nav.Link>
+                        <Nav.Link key='contact'>
                             <Link className='voip-nav-link' to='contact'>Контакты</Link>
                         </Nav.Link>
-                        <button type='button' className='btn-outline-try'>
+                        <button type='button' className='btn-outline-try' key='buy'>
                             <Link className='buy-btn' to='buy-step-1'>Купить</Link>
                         </button>
                     </Nav>

@@ -5,6 +5,16 @@ import Col from 'react-bootstrap/Col';
 import './styles.css';
 
 class BuyStep2 extends React.Component {
+    constructor(props) {
+        super(props);
+        let data = localStorage.getItem('voip-total');
+        data = (data && JSON.parse(data)) || {};
+        this.state = {
+            total: data.type === 'Trial' ? 0 : data.total,
+            type: data.type || '',
+        };
+    }
+
     render() {
         return (
             <Container className='buy-step-2'>
@@ -38,10 +48,10 @@ class BuyStep2 extends React.Component {
                                 <div className='your-selection-label'>Ваш тарифный план</div>
                                 <div className='your-selection-plan'>
                                     <div className='your-selection-plan-name'>
-                                        Smart
+                                        {this.state.type}
                                     </div>
                                     <div className='your-selection-plan-cost'>
-                                        $15
+                                        {`$${this.state.total}`}
                                     </div>
                                 </div>
                                 <div className='your-selection-info'>

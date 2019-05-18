@@ -16,7 +16,7 @@ class WeOffer extends React.Component {
             autodialerOn: false,
             autoInformatorOn: false,
             autoPollOn: false,
-            total: 0,
+            total: 20,
         };
 
         this.internalLinesCoeff = 10;
@@ -28,6 +28,13 @@ class WeOffer extends React.Component {
         this.onAutodialerToggle = this.onAutodialerToggle.bind(this);
         this.onAutoInformatorToggle = this.onAutoInformatorToggle.bind(this);
         this.onAutoPollToggle = this.onAutoPollToggle.bind(this);
+    }
+
+    componentDidUpdate() {
+        let data = localStorage.getItem('voip-total');
+        data = (data && JSON.parse(data)) || {};
+        data.total = this.state.total;
+        localStorage.setItem('voip-total', JSON.stringify(data));
     }
 
     onInternalLinesChange(event) {
