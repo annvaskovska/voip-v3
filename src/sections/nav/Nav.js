@@ -7,16 +7,6 @@ import Nav from 'react-bootstrap/Nav';
 import './styles.css';
 
 class Navigation extends React.Component {
-    constructor(props) {
-        super(props);
-        this.handleSelect = this.handleSelect.bind(this);
-    }
-
-    handleSelect(k) {
-        const { select } = this.props;
-        select(k);
-    }
-
     render() {
         return [
             <Navbar expand="lg" className='voip-nav'>
@@ -39,7 +29,9 @@ class Navigation extends React.Component {
                         <Nav.Link>
                             <Link className='voip-nav-link' to='contact'>Контакты</Link>
                         </Nav.Link>
-                        <button type='button' className='btn-outline-try'>Купить</button>
+                        <button type='button' className='btn-outline-try'>
+                            <Link className='buy-btn' to='/buy'>Купить</Link>
+                        </button>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
