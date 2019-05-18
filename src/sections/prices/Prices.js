@@ -28,7 +28,7 @@ const Prices = () => {
     ];
 
     return (
-        <Container fluid='true' className='prices'>
+        <Container id='prices' fluid='true' className='prices'>
             <Row className='title d-flex align-items-center'>
                 <Col md={{ span: 8, offset: 2 }}>Тарифы на международные звонки</Col>
             </Row>
