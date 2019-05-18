@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Navigation from './sections/nav/Nav';
 import HomePage from './sections/home/home';
+import Products from './sections/propducts/Products';
+import Prices from './sections/prices/Prices';
 import './App.css';
 
 class App extends Component {
@@ -14,6 +16,8 @@ class App extends Component {
   renderApp(appKey) {
       const mapper = {
           1: HomePage,
+          2: Products,
+          3: Prices,
       };
 
       const app = mapper[appKey] || HomePage;

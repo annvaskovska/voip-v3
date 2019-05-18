@@ -24,9 +24,9 @@ class Navigation extends React.Component {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="d-flex justify-content-end" onSelect={k => this.handleSelect(k)}>
-                        <Nav.Link className='voip-nav-link' href="#home" eventKey="1">О нас</Nav.Link>
-                        <Nav.Link className='voip-nav-link' href="#link" eventKey="2">Продукты</Nav.Link>
-                        <Nav.Link className='voip-nav-link' href="#link" eventKey="3">Стоимость звонков</Nav.Link>
+                        <Nav.Link className='voip-nav-link' eventKey="1">О нас</Nav.Link>
+                        <Nav.Link className='voip-nav-link' eventKey="2">Продукты</Nav.Link>
+                        <Nav.Link className='voip-nav-link' eventKey="3">Стоимость звонков</Nav.Link>
                         <Nav.Link className='voip-nav-link' href="#link" eventKey="4">Контакты</Nav.Link>
                         <button type='button' className='btn-outline-try btn-outline-try'>Купить</button>
                     </Nav>
