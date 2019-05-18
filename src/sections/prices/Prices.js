@@ -6,14 +6,14 @@ import './slyles.css';
 
 const renderRow = ({ name, price }) => (
     <Row className='results-row'>
-        <Col md={{ span: 4 }}>
+        <Col md={{ span: 6 }}>
             <div className='cell-regular-title'>
-                Количество внешних линий
+                {name}
             </div>
         </Col>
-        <Col md={{ span: 2 }}>
+        <Col md={{ span: 6 }}>
             <div className='m-auto d-flex justify-content-center align-items-center'>
-                $ 0.04
+                {price}
             </div>
         </Col>
     </Row>
@@ -33,7 +33,7 @@ const Prices = () => {
                 <Col md={{ span: 8, offset: 2 }}>Тарифы на международные звонки</Col>
             </Row>
             <Row className='input-field'>
-                <Col md={{ span: 6, offset: 2 }}>
+                <Col md={{ span: 5, offset: 2 }}>
                     <input
                         placeholder={'Введите страну или код страны'}
                         className='prices-input'
@@ -43,9 +43,13 @@ const Prices = () => {
                     <button type='button' className='btn-outline-prices'>Найти</button>
                 </Col>
             </Row>
-            <Container className='results-container'>
-                { rows.map(renderRow)}
-            </Container>
+            <Row fluid='true'>
+                <Col md={{ span: 5, offset: 2 }}>
+                    <Container className='results-container'>
+                        { rows.map(renderRow)}
+                    </Container>
+                </Col>
+            </Row>
         </Container>
     );
 };

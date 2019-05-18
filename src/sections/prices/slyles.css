@@ -24,6 +24,7 @@
 
 .prices .btn-outline-prices {
     display: inline-block;
+    width: 100%;
     font-weight: 400;
     text-align: center;
     vertical-align: middle;
