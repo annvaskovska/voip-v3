@@ -28,7 +28,7 @@ class Navigation extends React.Component {
                         <Nav.Link className='voip-nav-link' eventKey="2">Продукты</Nav.Link>
                         <Nav.Link className='voip-nav-link' eventKey="3">Стоимость звонков</Nav.Link>
                         <Nav.Link className='voip-nav-link' href="#link" eventKey="4">Контакты</Nav.Link>
-                        <button type='button' className='btn-outline-try btn-outline-try'>Купить</button>
+                        <button type='button' className='btn-outline-try'>Купить</button>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
