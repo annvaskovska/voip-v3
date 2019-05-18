@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -10,12 +11,16 @@ const Total = () => (
         <Row>
             <Col md={{ span: 3, offset: 6 }}>
                 <div className='total-cont'>
-                    <button type='button' className='btn-outline-try'>Попробовать сейчас</button>
+                    <Link to='buy-step-2'>
+                        <button type='button' className='btn-outline-try'>Попробовать сейчас</button>
+                    </Link>
                 </div>
             </Col>
             <Col md={{ span: 3 }}>
                 <div className='total-cont total-cont-full'>
-                    <button type='button' className='btn-outline-try btn-outline-try-full'>Попробовать сейчас</button>
+                    <Link to='buy-step-2'>
+                        <button type='button' className='btn-outline-try btn-outline-try-full'>Попробовать сейчас</button>
+                    </Link>
                 </div>
             </Col>
         </Row>

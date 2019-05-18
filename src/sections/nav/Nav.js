@@ -22,9 +22,9 @@ class Navigation extends React.Component {
                         <Nav.Link>
                             <Link className='voip-nav-link' to='/'>О нас</Link>
                         </Nav.Link>
-                        <Nav.Link>
-                            <Link className='voip-nav-link' to='products'>Продукты</Link>
-                        </Nav.Link>
+                        {/*<Nav.Link>*/}
+                            {/*<Link className='voip-nav-link' to='products'>Продукты</Link>*/}
+                        {/*</Nav.Link>*/}
                         <Nav.Link>
                             <Link className='voip-nav-link' to='prices'>Стоимость звонков</Link>
                         </Nav.Link>
@@ -32,7 +32,7 @@ class Navigation extends React.Component {
                             <Link className='voip-nav-link' to='contact'>Контакты</Link>
                         </Nav.Link>
                         <button type='button' className='btn-outline-try'>
-                            <Link className='buy-btn' to='/buy'>Купить</Link>
+                            <Link className='buy-btn' to='buy-step-1'>Купить</Link>
                         </button>
                     </Nav>
                 </Navbar.Collapse>
