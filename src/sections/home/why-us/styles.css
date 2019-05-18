@@ -25,14 +25,14 @@
 .icon-price-tag {
     height: 35px;
     width: 35px;
-    background: url('./../../resources/icons/price-tag.svg') no-repeat center center;
+    background: url('../../../resources/icons/price-tag.svg') no-repeat center center;
     background-size: contain;
 }
 
 .icon-cloud {
     height: 35px;
     width: 35px;
-    background: url('./../../resources/icons/cloud.svg') no-repeat center center;
+    background: url('../../../resources/icons/cloud.svg') no-repeat center center;
     background-size: contain;
 }
 
@@ -40,7 +40,7 @@
 .icon-equality {
     height: 35px;
     width: 35px;
-    background: url('./../../resources/icons/equality.svg') no-repeat center center;
+    background: url('../../../resources/icons/equality.svg') no-repeat center center;
     background-size: contain;
 }
 

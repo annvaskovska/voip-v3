@@ -25,14 +25,14 @@
 .services-asterisk {
     height: 100px;
     width: 100px;
-    background: url('../../resources/icons/asterisk_logo.svg') no-repeat center center;
+    background: url('../../../resources/icons/asterisk_logo.svg') no-repeat center center;
     background-size: contain;
 }
 
 .services-odoo {
     height: 100px;
     width: 100px;
-    background: url('./../../resources/icons/odoo_logo.png') no-repeat center center;
+    background: url('./../../../resources/icons/odoo_logo.png') no-repeat center center;
     background-size: contain;
 }
 
@@ -40,21 +40,21 @@
 .services-cloud-bpx {
     height: 100px;
     width: 100px;
-    background: url('../../resources/icons/cloud-PBX.png') no-repeat center center;
+    background: url('../../../resources/icons/cloud-PBX.png') no-repeat center center;
     background-size: contain;
 }
 
 .services-voip-trunks {
     height: 100px;
     width: 100px;
-    background: url('./../../resources/icons/voip-trunks.svg') no-repeat center center;
+    background: url('./../../../resources/icons/voip-trunks.svg') no-repeat center center;
     background-size: contain;
 }
 
 .services-autodialer {
     height: 100px;
     width: 100px;
-    background: url('./../../resources/icons/connection.svg') no-repeat center center;
+    background: url('./../../../resources/icons/connection.svg') no-repeat center center;
     background-size: contain;
 }
 

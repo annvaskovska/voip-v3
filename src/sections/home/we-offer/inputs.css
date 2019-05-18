@@ -22,7 +22,7 @@
 .icon-tick {
     height: 20px;
     width: 20px;
-    background: url('./../../resources/icons/tick.svg') no-repeat center center;
+    background: url('../../../resources/icons/tick.svg') no-repeat center center;
     background-size: contain;
 }
 

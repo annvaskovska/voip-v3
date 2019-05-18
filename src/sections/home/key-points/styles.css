@@ -27,27 +27,27 @@
 .cloud-atc {
     height: 25px;
     width: 25px;
-    background: url('./../../resources/icons/cloud-atc.svg') no-repeat center center;
+    background: url('./../../../resources/icons/cloud-atc.svg') no-repeat center center;
     background-size: contain;
 }
 
 .crm {
     height: 25px;
     width: 25px;
-    background: url('./../../resources/icons/crm.svg') no-repeat center center;
+    background: url('./../../../resources/icons/crm.svg') no-repeat center center;
     background-size: contain;
 }
 
 .hr {
     height: 25px;
     width: 25px;
-    background: url('./../../resources/icons/crm.svg') no-repeat center center;
+    background: url('./../../../resources/icons/crm.svg') no-repeat center center;
     background-size: contain;
 }
 
 .phone-call {
     height: 25px;
     width: 25px;
-    background: url('./../../resources/icons/phone-call.svg') no-repeat center center;
+    background: url('./../../../resources/icons/phone-call.svg') no-repeat center center;
     background-size: contain;
 }

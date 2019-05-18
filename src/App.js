@@ -1,22 +1,26 @@
 import React, { Component } from 'react';
 import Navigation from './sections/nav/Nav';
-import Header from './sections/header/Header';
-import WorkWith from './sections/work-with/WorkWith';
-import WhyUs from './sections/why-us/WhyUs';
-import WeOffer from './sections/we-offer/WeOffer';
-import Title from './sections/titile/Title';
-import Total from './sections/total/Total';
-import Opportunities from './sections/opportunities/Opportunities';
-import KeyPoints from './sections/key-points/KeyPoints';
-import Feedbacks from './sections/feedbacks/Feedbacks';
-import Services from './sections/services/Services';
-import ContactUs from './sections/contact-us/ContactUs';
-import Footer from './sections/footer/Footer';
-import JoinUs from './sections/join-us/JoinUs';
-
+import HomePage from './sections/home/home';
 import './App.css';
 
 class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            app: HomePage,
+        };
+        this.renderApp = this.renderApp.bind(this);
+    }
+  renderApp(appKey) {
+      const mapper = {
+          1: HomePage,
+      };
+
+      const app = mapper[appKey] || HomePage;
+
+      this.setState({ app })
+  }
+
   render() {
     return (
       <div className="App">
@@ -26,20 +30,8 @@ class App extends Component {
             integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
             crossOrigin="anonymous"
         />
-        <Navigation/>
-        <Header/>
-        <WorkWith/>
-        <WhyUs/>
-        <Title/>
-        <WeOffer/>
-        <Total/>
-        <Opportunities/>
-        <KeyPoints/>
-        <Feedbacks/>
-        <Services/>
-        <JoinUs/>
-        <ContactUs/>
-        <Footer/>
+        <Navigation select={this.renderApp}/>
+        { this.state.app() }
       </div>
     );
   }

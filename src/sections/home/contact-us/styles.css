@@ -43,7 +43,7 @@
     height: 35px;
     width: 35px;
     margin-right: 20px;
-    background: url('./../../resources/icons/location.svg') no-repeat center center;
+    background: url('../../../resources/icons/location.svg') no-repeat center center;
     background-size: contain;
 }
 
@@ -51,7 +51,7 @@
     height: 35px;
     width: 35px;
     margin-right: 20px;
-    background: url('./../../resources/icons/call-answer.svg') no-repeat center center;
+    background: url('../../../resources/icons/call-answer.svg') no-repeat center center;
     background-size: contain;
 }
 

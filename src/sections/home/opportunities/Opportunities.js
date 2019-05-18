@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './styles.css';
-import img from '../../resources/img/people.jpg';
+import img from '../../../resources/img/people.jpg';
 
 const Opportunities = () => (
     <Container fluid='true' className='opportunities-container'>
